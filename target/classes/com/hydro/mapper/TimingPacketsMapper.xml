@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hydro.mapper.TimingPacketsMapper">
+  <resultMap id="BaseResultMap" type="com.hydro.model.TimingPackets">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="head_remote_address" jdbcType="VARCHAR" property="headRemoteAddress" />
+    <result column="transmit_time" jdbcType="TIMESTAMP" property="transmitTime" />
+    <result column="under_water_instant_depth" jdbcType="VARCHAR" property="underWaterInstantDepth" />
+    <result column="instant_water_temp" jdbcType="VARCHAR" property="instantWaterTemp" />
+    <result column="power_voltage" jdbcType="VARCHAR" property="powerVoltage" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hydro.model.TimingPackets">
+    insert into timing_packet (id, head_remote_address, transmit_time, 
+      under_water_instant_depth, instant_water_temp, 
+      power_voltage)
+    values (#{id,jdbcType=VARCHAR}, #{headRemoteAddress,jdbcType=VARCHAR}, #{transmitTime,jdbcType=TIMESTAMP}, 
+      #{underWaterInstantDepth,jdbcType=VARCHAR}, #{instantWaterTemp,jdbcType=VARCHAR}, 
+      #{powerVoltage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hydro.model.TimingPackets">
+    insert into timing_packet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="headRemoteAddress != null">
+        head_remote_address,
+      </if>
+      <if test="transmitTime != null">
+        transmit_time,
+      </if>
+      <if test="underWaterInstantDepth != null">
+        under_water_instant_depth,
+      </if>
+      <if test="instantWaterTemp != null">
+        instant_water_temp,
+      </if>
+      <if test="powerVoltage != null">
+        power_voltage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="headRemoteAddress != null">
+        #{headRemoteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="transmitTime != null">
+        #{transmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="underWaterInstantDepth != null">
+        #{underWaterInstantDepth,jdbcType=VARCHAR},
+      </if>
+      <if test="instantWaterTemp != null">
+        #{instantWaterTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="powerVoltage != null">
+        #{powerVoltage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.hydro.model.TimingPackets">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="head_remote_address" jdbcType="VARCHAR" property="headRemoteAddress" />
+    <result column="transmit_time" jdbcType="TIMESTAMP" property="transmitTime" />
+    <result column="under_water_instant_depth" jdbcType="VARCHAR" property="underWaterInstantDepth" />
+    <result column="instant_water_temp" jdbcType="VARCHAR" property="instantWaterTemp" />
+    <result column="power_boltage" jdbcType="VARCHAR" property="powerBoltage" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hydro.model.TimingPackets">
+    insert into timing_packet (id, head_remote_address, transmit_time, 
+      under_water_instant_depth, instant_water_temp, 
+      power_boltage)
+    values (#{id,jdbcType=VARCHAR}, #{headRemoteAddress,jdbcType=VARCHAR}, #{transmitTime,jdbcType=TIMESTAMP}, 
+      #{underWaterInstantDepth,jdbcType=VARCHAR}, #{instantWaterTemp,jdbcType=VARCHAR}, 
+      #{powerBoltage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hydro.model.TimingPackets">
+    insert into timing_packet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="headRemoteAddress != null">
+        head_remote_address,
+      </if>
+      <if test="transmitTime != null">
+        transmit_time,
+      </if>
+      <if test="underWaterInstantDepth != null">
+        under_water_instant_depth,
+      </if>
+      <if test="instantWaterTemp != null">
+        instant_water_temp,
+      </if>
+      <if test="powerBoltage != null">
+        power_boltage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="headRemoteAddress != null">
+        #{headRemoteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="transmitTime != null">
+        #{transmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="underWaterInstantDepth != null">
+        #{underWaterInstantDepth,jdbcType=VARCHAR},
+      </if>
+      <if test="instantWaterTemp != null">
+        #{instantWaterTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="powerBoltage != null">
+        #{powerBoltage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.hydro.model.TimingPackets">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="head_RemoteAddress" jdbcType="VARCHAR" property="headRemoteaddress" />
+    <result column="transmit_time" jdbcType="TIMESTAMP" property="transmitTime" />
+    <result column="under_Water_Instant_Depth" jdbcType="VARCHAR" property="underWaterInstantDepth" />
+    <result column="instant_Water_Temp" jdbcType="VARCHAR" property="instantWaterTemp" />
+    <result column="powerVoltage" jdbcType="VARCHAR" property="powervoltage" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hydro.model.TimingPackets">
+    insert into timing_packet (id, head_RemoteAddress, transmit_time, 
+      under_Water_Instant_Depth, instant_Water_Temp, 
+      powerVoltage)
+    values (#{id,jdbcType=VARCHAR}, #{headRemoteaddress,jdbcType=VARCHAR}, #{transmitTime,jdbcType=TIMESTAMP}, 
+      #{underWaterInstantDepth,jdbcType=VARCHAR}, #{instantWaterTemp,jdbcType=VARCHAR}, 
+      #{powervoltage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hydro.model.TimingPackets">
+    insert into timing_packet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="headRemoteaddress != null">
+        head_RemoteAddress,
+      </if>
+      <if test="transmitTime != null">
+        transmit_time,
+      </if>
+      <if test="underWaterInstantDepth != null">
+        under_Water_Instant_Depth,
+      </if>
+      <if test="instantWaterTemp != null">
+        instant_Water_Temp,
+      </if>
+      <if test="powervoltage != null">
+        powerVoltage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="headRemoteaddress != null">
+        #{headRemoteaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="transmitTime != null">
+        #{transmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="underWaterInstantDepth != null">
+        #{underWaterInstantDepth,jdbcType=VARCHAR},
+      </if>
+      <if test="instantWaterTemp != null">
+        #{instantWaterTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="powervoltage != null">
+        #{powervoltage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	
+	<!-- <properties resource="init.properties"/> -->
+	
+	<!-- 指定数据库连接驱动地�?-->
+	<!-- <classPathEntry
+		location="${classpath}" /> -->
+	<classPathEntry
+		location="E:/Program Files/MavenRepository/maven_jar/mysql/mysql-connector-Java/5.1.30/mysql-connector-Java-5.1.30.jar" />
+	<!-- �?��数据库一�?context -->
+	<context id="context1">
+	
+		<commentGenerator>
+			<!-- 是否取消注释 -->
+			<property name="suppressAllComments" value="true"></property>
+			<!-- 是否生成注释代时间戳-->
+			<property name="suppressDate" value="true"></property>
+		</commentGenerator>
+		<!-- jdbc连接配置 -->
+	<!-- 	<jdbcConnection
+			connectionURL="http://maven.apache.org"
+			driverClass="${driver}" password="${username}" userId="${password}" /> -->
+		<jdbcConnection
+			connectionURL="jdbc:mysql://localhost:3306/hydrocloud?useUnicode=true&amp;characterEncoding=UTF-8"
+			driverClass="com.mysql.jdbc.Driver" password="root123" userId="root" />
+			
+		<!-- 类型转换 -->  
+        <javaTypeResolver>  
+            <!-- 是否使用bigDecimal�?false可自动转化以下类型（Long, Integer, Short, etc.�?-->  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+		
+		<!-- 生成实体类的地址 -->
+		<javaModelGenerator targetPackage="com.hydro.model"
+			targetProject="E:\git_program\hydrologys\src\main\java" />
+			
+		<!-- 生成mapper.xml文件 -->
+		<sqlMapGenerator targetPackage="com.hydro.mapper"
+			targetProject="E:\git_program\hydrologys\src\main\resources" />
+		
+		<!-- 生成mapxml对应的client 也就是接口dao -->
+		<javaClientGenerator targetPackage="com.hydro.mapper"
+			targetProject="E:\git_program\hydrologys\src\main\java" type="XMLMAPPER" />
+			
+		<table schema="hydrocloud" tableName="timing_packet"  domainObjectName="TimingPackets" enableCountByExample="false"  
+            enableDeleteByExample="false" enableSelectByExample="false"  
+            enableUpdateByExample="false">
+            <!-- domainObjectName  指定生成的类的名�?-->
+		</table>
+	</context>
+</generatorConfiguration>
