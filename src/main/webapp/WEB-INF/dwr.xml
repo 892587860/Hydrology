@@ -8,7 +8,7 @@
 		<!-- Spring中获取java对象 javascript属性表示为jsp页面引用的脚本名 creator属性是最重要的配置，设置为spring为通过spring创建对象实例，设置为new表示通过new创建对象实例 -->
 		<create javascript="timingPacket" creator="new"  scope="application">
 			<!-- name设置为beanName，value属性就设为spring中对应bean的id name若设置为class,value属性就设为controller的路径 -->
-			<param name="class" value="com.hydro.controller.TimingPacketController"></param>
+			<param name="class" value="com.hydro.util.TimingPacketParseUtil"></param>
 		</create>
 		<!-- 自定义类转换器 -->
 		<convert converter="bean" match="com.hydro.model.TimingPacket"/>

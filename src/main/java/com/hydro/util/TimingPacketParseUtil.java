@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.directwebremoting.Browser;
+import org.directwebremoting.ScriptSessions;
 import org.springframework.context.ApplicationContext;
 
 import com.hydro.model.TimingPacket;
@@ -94,8 +96,14 @@ public class TimingPacketParseUtil {
 		timingPacket.setValidateCode(elementString.substring(2,6));
 		
 		ApplicationContext appCtx = SpringContextUtil.getApplicationContext();
-		TimingPacketService service = (TimingPacketService)SpringContextUtil.getBean(TimingPacketService.class);
+		final TimingPacketService service = (TimingPacketService)SpringContextUtil.getBean(TimingPacketService.class);
 		service.insert(timingPacket);
+//		list = service.findAll();
+//		Browser.withCurrentPage(new Runnable() {  
+//            public void run() {  
+//                ScriptSessions.addFunctionCall("onPageLoad", list); // 参数一是页面的javascript函数，参数二是函数的参数  
+//            }  
+//        });  
 		return true;
 	}
 	//获取要素（或参数）属性和属性值
@@ -143,4 +151,6 @@ public class TimingPacketParseUtil {
 		String str2 = str.substring(size-pointPosition,size);
 		return str1+"."+str2;
 	}
+	
+	private static List<TimingPacket> list =new ArrayList<TimingPacket>();
 }

@@ -67,11 +67,11 @@
 
 <!-- Gitter Sidecar -->
 <script>
-      ((window.gitter = {}).chat = {}).options = {
-        room: 'HydroCloud-app/Lobby',
-        activationElement: false
-      };
-    </script>
+	((window.gitter = {}).chat = {}).options = {
+		room : 'HydroCloud-app/Lobby',
+		activationElement : false
+	};
+</script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 
 
@@ -261,24 +261,18 @@ svg .dataNotice {
 			<a id="brand" class="navbar-brand" href="#">HydroCloud</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li data-target="#carousel-example-generic" data-slide-to="0">
 					<a href="#" data-bind="click: map">Map</a>
 				</li>
-				<li class="dropdown" data-target="#carousel-example-generic"
-					data-slide-to="1"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Graph <b class="caret"> </b> </a>
+				<li class="dropdown" data-target="#carousel-example-generic" data-slide-to="1">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Graph <b class="caret"> </b> </a>
 					<ul class="dropdown-menu">
-						<li><a href="#" data-bind="click: scatter">Hydrograph</a>
-						</li>
-						<li><a href="#" data-bind="click: flow">Flow Duration</a>
-						</li>
+						<li><a href="#" data-bind="click: scatter">Hydrograph</a></li>
+						<li><a href="#" data-bind="click: flow">Flow Duration</a></li>
 						<li class="divider"></li>
-						<li><a href="#" data-bind="click: toggleLegend">Show
-								Legend</a>
-						</li>
+						<li><a href="#" data-bind="click: toggleLegend">Show Legend</a></li>
 					</ul>
 				</li>
 				<li data-target="#carousel-example-generic" data-slide-to="2">
@@ -287,8 +281,8 @@ svg .dataNotice {
 				<li data-target="#carousel-example-generic" data-slide-to="3">
 					<a href="#"><strong>?</strong> </a>
 				</li>
-				<li><a href="#"
-					class="js-gitter-toggle-chat-button glyphicon glyphicon-comment"></a>
+				<li>
+				<a href="#" class="js-gitter-toggle-chat-button glyphicon glyphicon-comment"></a>
 				</li>
 			</ul>
 		</div>
@@ -324,8 +318,7 @@ svg .dataNotice {
 				<b>Sites:</b>
 			</p>
 			<ol data-bind="foreach: viewModel.siteDict">
-				<li><span data-bind="text: $data.name"></span>
-				</li>
+				<li><span data-bind="text: $data.name"></span></li>
 			</ol>
 		</div>
 	</div>
@@ -336,36 +329,33 @@ svg .dataNotice {
 
 		<!-- Indicators This is a built-in set of js and css that goes with the Bootstrap Carousel. Can't mess with it too much. -->
 		<ol class="carousel-indicators" id="bottom-nav">
-			<li data-target="#carousel-example-generic" data-slide-to="0"
-				class="active" data-bind="click: map"><span
-				class="glyphicon glyphicon-globe"> </span>
+			<li data-target="#carousel-example-generic" data-slide-to="0" data-bind="click: map" 
+				class="active">
+				<span class="glyphicon glyphicon-globe"></span>
 			</li>
 			<li data-target="#carousel-example-generic" data-slide-to="1"><span
-				class="glyphicon glyphicon-stats"> </span>
-			</li>
-			<li data-target="#carousel-example-generic" data-slide-to="2"><span
-				class="glyphicon glyphicon-th-list"> </span>
-			</li>
+				class="glyphicon glyphicon-stats"> </span></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"><span class="glyphicon glyphicon-th-list">
+			</span></li>
 			<li data-target="#carousel-example-generic" data-slide-to="3"><span
-				class="glyphicon glyphicon-question-sign"> </span>
-			</li>
+				class="glyphicon glyphicon-question-sign"> </span></li>
 		</ol>
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 
-			<div class="item" id="map_div"></div>
+			<div class="item  active" id="map_div"></div>
 
 			<div class="item" id="graph_div"></div>
 
-			<div class="item v-scroll  active" id="stats_div">
+			<div class="item v-scroll " id="stats_div">
 				<h3>Site Statistics</h3>
-				<!-- <p>
+				<p>
 					<span data-bind="text: viewModel.dataArray().length"> </span> sites
 					selected
 				</p>
 				<div class="table-responsive">
-					<table class="table">
+					<!-- 		<table class="table">
               <thead>
                 <tr>
                   <th>Site Name</th><th>Site ID</th><th>Watershed area (km<sup>2</sup>)</th><th>% Impervious</th>
@@ -379,7 +369,7 @@ svg .dataNotice {
                   <td data-bind="text: $data.impervious"></td>
                 </tr>
               </tbody>
-            </table> --><input type="button" value="send" onclick="onPageLoad()" />
+            </table> -->
 					<table class="table">
 						<thead>
 							<tr>
@@ -401,8 +391,8 @@ svg .dataNotice {
 						</tbody>
 					</table>
 				</div>
-
 			</div>
+
 
 			<div class="item v-scroll" id="help_div">
 
@@ -432,8 +422,7 @@ svg .dataNotice {
 								equals 100 cms and "4e+3" = 4000
 								cms.(一种按大小排序的cms的所有水流量测量图，从最大到最小。在科学表示法中，以对数绘制的y轴水流量，因此“1e +
 								2”等于100厘米，“4e + 3”= 4000 cms。)</li>
-						</ul>
-					</li>
+						</ul></li>
 					<li><span class="glyphicon glyphicon-th-list"> </span> <strong>Stats:</strong>
 						The site statistics page. This lists each site that has been
 						selected in the map view, along with some simple site statistics,
@@ -500,8 +489,7 @@ svg .dataNotice {
 								<li>Street map, terrain map, map data: ©2017 Google</li>
 								<li>Satellite Base Map: Google Imagery ©2017 TerraMetrics</li>
 								<li>Google Street View ©2017 Google</li>
-							</ul>
-						</li>
+							</ul></li>
 						<li>NEXRAD imagery © 2001-2017 Iowa State University Iowa
 							Environmental Mesonet</li>
 						<li>Stream discharge data providers (<a
@@ -511,59 +499,93 @@ svg .dataNotice {
 									Geological Survey</li>
 								<li>German discharge and station data ©2017 <a
 									href="http://www.pegelonline.wsv.de">Wasserstraßen- und
-										Schifffahrtsverwaltung des Bundes</a></li>
+										Schifffahrtsverwaltung des Bundes</a>
+								</li>
 								<li>UK sites use Environment Agency flood and river level
 									data from the <a
 									href="http://environment.data.gov.uk/flood-monitoring/doc/reference">real-time
-										data API (Beta)</a></li>
-							</ul>
-						</li>
+										data API (Beta)</a>
+								</li>
+							</ul></li>
 						<li><a
 							href="https://water.usgs.gov/lookup/getspatial?gagesII_Sept2011">GAGES-II</a>
 							station data ©2011 James Falcone</li>
 					</ul> </small>
 			</div>
+
 		</div>
 
 	</div>
 
 	<script>
-      initialize();
-    </script>
+		initialize();
+	</script>
 	<script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'//www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-73178522-2', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-	<script type="text/javascript" src="dwr/engine.js"></script>
+		ga('create', 'UA-73178522-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- 	<script type="text/javascript" src="dwr/engine.js"></script>
 	<script type="text/javascript" src="dwr/util.js"></script>
-	<script type="text/javascript" src="dwr/interface/timingPacket.js"></script>
+	<script type="text/javascript" src="dwr/interface/timingPacket.js"></script> -->
 	<script type="text/javascript">
-	$(document).ready(function(){       
-		//这个方法用来启动该页面的ReverseAjax功能
-		dwr.engine.setActiveReverseAjax(true);
-		//设置在页面关闭时，通知服务端销毁会话
-		dwr.engine.setNotifyServerOnPageUnload(true);
-		//设置DWR调用服务出错时，不打印(alert)调试信息 
-		dwr.engine.setErrorHandler(function() {       
-		 //    
+		$(document).ready(function() {
+			//这个方法用来启动该页面的ReverseAjax功能
+			/* 	dwr.engine.setActiveReverseAjax(true);
+				//设置在页面关闭时，通知服务端销毁会话
+				dwr.engine.setNotifyServerOnPageUnload(true);
+				//设置DWR调用服务出错时，不打印(alert)调试信息 
+				dwr.engine.setErrorHandler(function() {
+					//    
+				}); */
+			onPageLoad();
 		});
-		onPageLoad();
-	});
-	function onPageLoad(){       
-		timingPacket.getAllPackets(function(data){
-			var l = data.length;
-			for(var i=0;i<l;i++){
-				viewModel.timingPacketData.push(data[i]);
-			}
-		});
-	}
-</script>
+		function onPageLoad() {
+			$.ajax({
+				url : 'timing/getAllData',
+				type : 'POST', //GET
+				async : true, //或false,是否异步
+				data : {
+					name : 'yang',
+					age : 25
+				},
+				timeout : 5000, //超时时间
+				dataType : 'json', //返回的数据格式：json/xml/html/script/jsonp/text
+				beforeSend : function(xhr) {
+					console.log('---发送前---')
+					console.log(xhr)
+				},
+				success : function(data, textStatus, jqXHR) {
+					console.log(data)
+					console.log(textStatus)
+					console.log(jqXHR)
+					var result = data;
+					for ( var i = 0; i < result.length; i++) {
+						viewModel.timingPacketData.push(result[i]);
+					}
+				},
+				error : function(xhr, textStatus) {
+					console.log('----错误------')
+					console.log(xhr)
+					console.log(textStatus)
+				},
+				complete : function() {
+					console.log('-----结束------');
+				}
+			})
+		}
+	</script>
 
 </body>
 </html>

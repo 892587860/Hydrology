@@ -233,6 +233,9 @@ function redraw() {
     google.maps.event.trigger(map, 'resize');
 }
 function redraw_Baidu() {
+//	 var center = map.getCenter();
+//	    map.checkResize();
+//	    map.setCenter(center);
     //fourthChart.width(window.innerWidth - 10);
     //Set the new width here, then redraw the graph.
     viewModel.width($(window).width());
