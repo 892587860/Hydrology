@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hydro.mapper.TimingPacketMapper">
+  <resultMap id="TimingPacketMap" type="com.hydro.model.TimingPacket">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="head_remote_address" jdbcType="VARCHAR" property="headRemoteAddress" />
+    <result column="transmit_time" jdbcType="TIMESTAMP" property="transmitTime" />
+    <result column="under_water_instant_depth" jdbcType="VARCHAR" property="underWaterInstantDepth" />
+    <result column="instant_water_temp" jdbcType="VARCHAR" property="instantWaterTemp" />
+    <result column="power_voltage" jdbcType="VARCHAR" property="powerVoltage" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    head_remote_address, transmit_time, under_water_instant_depth, instant_water_temp,power_voltage
+  </sql>
+  <insert id="insert" parameterType="com.hydro.model.TimingPacket">
+    insert into timing_packet (id, head_remote_address, transmit_time, 
+      under_water_instant_depth, instant_water_temp, 
+      power_voltage)
+    values (#{id,jdbcType=VARCHAR}, #{headRemoteAddress,jdbcType=VARCHAR}, #{transmitTime,jdbcType=TIMESTAMP}, 
+      #{underWaterInstantDepth,jdbcType=VARCHAR}, #{instantWaterTemp,jdbcType=VARCHAR}, 
+      #{powerVoltage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hydro.model.TimingPacket">
+    insert into timing_packet
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="headRemoteAddress != null">
+        head_remote_address,
+      </if>
+      <if test="transmitTime != null">
+        transmit_time,
+      </if>
+      <if test="underWaterInstantDepth != null">
+        under_water_instant_depth,
+      </if>
+      <if test="instantWaterTemp != null">
+        instant_water_temp,
+      </if>
+      <if test="powerVoltage != null">
+        power_voltage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="headRemoteAddress != null">
+        #{headRemoteAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="transmitTime != null">
+        #{transmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="underWaterInstantDepth != null">
+        #{underWaterInstantDepth,jdbcType=VARCHAR},
+      </if>
+      <if test="instantWaterTemp != null">
+        #{instantWaterTemp,jdbcType=VARCHAR},
+      </if>
+      <if test="powerVoltage != null">
+        #{powerVoltage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="findAll" resultMap="TimingPacketMap">
+  	SELECT * FROM timing_packet 
+  </select>
+  <select id="selectByPrimaryKey" resultMap="TimingPacketMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from timing_packet
+    where user_id = #{headRemoteAddress,jdbcType=VARCHAR}
+  </select>
+</mapper>
