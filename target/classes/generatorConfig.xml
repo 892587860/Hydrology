@@ -4,12 +4,12 @@
 	
 	<!-- <properties resource="init.properties"/> -->
 	
-	<!-- 指定数据库连接驱动地�?-->
+	<!-- 指定数据库连接驱动地址 -->
 	<!-- <classPathEntry
 		location="${classpath}" /> -->
 	<classPathEntry
 		location="E:/Program Files/MavenRepository/maven_jar/mysql/mysql-connector-Java/5.1.30/mysql-connector-Java-5.1.30.jar" />
-	<!-- �?��数据库一�?context -->
+	<!-- 一个数据库一个 context -->
 	<context id="context1">
 	
 		<commentGenerator>
@@ -28,7 +28,7 @@
 			
 		<!-- 类型转换 -->  
         <javaTypeResolver>  
-            <!-- 是否使用bigDecimal�?false可自动转化以下类型（Long, Integer, Short, etc.�?-->  
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->  
             <property name="forceBigDecimals" value="false"/>  
         </javaTypeResolver>  
 		
@@ -47,7 +47,7 @@
 		<table schema="hydrocloud" tableName="timing_packet"  domainObjectName="TimingPackets" enableCountByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false"  
             enableUpdateByExample="false">
-            <!-- domainObjectName  指定生成的类的名�?-->
+            <!-- domainObjectName  指定生成的类的名字 -->
 		</table>
 	</context>
 </generatorConfiguration>

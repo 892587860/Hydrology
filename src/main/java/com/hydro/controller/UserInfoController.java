@@ -5,6 +5,9 @@ import java.util.Map;
 
 import com.hydro.model.UserInfo;
 import com.hydro.service.UserInfoService;
+
+import org.directwebremoting.annotations.RemoteMethod;
+import org.directwebremoting.annotations.RemoteProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,8 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller  
 @RequestMapping(value="/user")  
+@RemoteProxy
 //@RequestMapping用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。
-public class UserInfoCotroller {  
+public class UserInfoController {  
       
     @Autowired  
     private UserInfoService userInfoService;  
@@ -27,6 +31,7 @@ public class UserInfoCotroller {
      * @return  
      */  
     @RequestMapping(value="/getAllUser")  
+    @RemoteMethod
     public String getAllUser(Map<String, Object> map){  
         List<UserInfo> userList = userInfoService.findAll();  
         map.put("ALLUSER", userList);  

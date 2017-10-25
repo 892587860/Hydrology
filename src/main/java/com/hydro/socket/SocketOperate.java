@@ -52,7 +52,7 @@ public class SocketOperate implements Runnable {
 				break;
 			}
 			System.out.println("-----服务器接受的报文为："+content);
-			if(TimingPacketParseUtil.parseUpPacket(content)){
+			if(!TimingPacketParseUtil.parseUpPacket(content)){
 				writer.println("--------报文传输有误-------------");
 			}
 			writer.println("-----------服务端成功获取客户端数据");

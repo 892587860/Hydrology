@@ -90,6 +90,12 @@
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- ajax 反向代理 dwr -->
+		<dependency>
+			<groupId>org.directwebremoting</groupId>
+			<artifactId>dwr</artifactId>
+			<version>3.0.2-RELEASE</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>Hydrology</finalName>
@@ -101,6 +107,29 @@
 				<configuration>
 					<verbose>true</verbose>
 					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<includeEmptyDirs>true</includeEmptyDirs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<charset>UTF16</charset>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -117,6 +146,6 @@
 		</resources>
 	</build>
 	<properties>
-		<project.build.sourceencoding>UTF-8</project.build.sourceencoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 </project>

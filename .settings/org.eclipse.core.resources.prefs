@@ -1,5 +1,5 @@
-#Wed Oct 18 15:26:56 CST 2017
+#Mon Oct 23 16:11:20 CST 2017
 eclipse.preferences.version=1
-encoding//src/main/java/com/hydro/controller/UserInfoCotroller.java=UTF-8
-encoding//src/main/java/com/hydro/serivce/impl/UserInfoServiceImpl.java=UTF-8
+encoding//src/main/java/com/hydro/controller/UserInfoController.java=UTF-8
+encoding//src/main/java/com/hydro/service/impl/UserInfoServiceImpl.java=UTF-8
 encoding/<project>=UTF-8

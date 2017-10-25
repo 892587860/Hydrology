@@ -1,4 +1,4 @@
-package com.hydro.serivce.impl;
+package com.hydro.service.impl;
   
 import java.util.List;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<!-- namespace这个属�?来定位到这个配置文件 -->
+<!-- namespace这个属性来定位到这个配置文件 -->
 <mapper namespace="com.hydro.mapper.UserInfoMapper" >
 <!-- 数据库字段和实体字段名字映射 -->
   <resultMap id="BaseResultMap" type="com.hydro.model.UserInfo" >

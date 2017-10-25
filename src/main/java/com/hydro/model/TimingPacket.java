@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.directwebremoting.annotations.DataTransferObject;
+import org.directwebremoting.convert.BeanConverter;
+
+@DataTransferObject(converter=BeanConverter.class)
 //定时报
 public class TimingPacket {
 	private String id;

@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.hydro.model.TimingPacket;
+import org.springframework.context.ApplicationContext;
 
+import com.hydro.model.TimingPacket;
+import com.hydro.service.TimingPacketService;
 public class TimingPacketParseUtil {
 	
 	public static boolean parseUpPacket(String packet){
@@ -90,6 +92,10 @@ public class TimingPacketParseUtil {
 		
 		timingPacket.setPacketEndChar(elementString.substring(0,2));
 		timingPacket.setValidateCode(elementString.substring(2,6));
+		
+		ApplicationContext appCtx = SpringContextUtil.getApplicationContext();
+		TimingPacketService service = (TimingPacketService)SpringContextUtil.getBean(TimingPacketService.class);
+		service.insert(timingPacket);
 		return true;
 	}
 	//获取要素（或参数）属性和属性值

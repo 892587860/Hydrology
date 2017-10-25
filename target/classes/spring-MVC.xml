@@ -11,17 +11,21 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx  
         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
-	<!-- �?��注解 -->
-	<mvc:annotation-driven/>
-	<!-- 配置自定扫描�?,告诉框架那些类是使用注解的�?-->
-	<context:component-scan base-package="com.hydro.controller"/>
-	<context:component-scan base-package="com.hydro.serivce.impl"/>
-	
-	<!-- 配置视图解析�? 如何�?handler 方法返回值解析为实际的物理视�?-->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- 开启注解 -->
+	<mvc:annotation-driven />
+	<!-- 配置自定扫描包 ,告诉框架那些类是使用注解的。 -->
+	<context:component-scan base-package="com.hydro.controller" />
+	<context:component-scan base-package="com.hydro.service.impl" />
+
+	<!-- 配置视图解析器: 如何把 handler 方法返回值解析为实际的物理视图 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/view/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	<!-- 处理静�?资源 -->
-	<mvc:default-servlet-handler/>
+	<!-- 处理静态资源 -->
+	<mvc:default-servlet-handler />
+
+	<bean id="springContextUtil" class="com.hydro.util.SpringContextUtil"></bean>
+
 </beans>
